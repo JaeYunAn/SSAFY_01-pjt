@@ -10,17 +10,18 @@ file_path = Path('./data/books_20.json')  # JSON 파일 경로 설정
 if file_path.exists():  # 파일이 존재할 경우
     # 파일 열기
     with file_path.open('r', encoding='utf-8') as file:
-        pass  # JSON 파일을 파이썬 딕셔너리로 변환하는 코드 (json.load)
+        data = json.load(file)  # TODO
+        print(type(data))  # JSON 파일을 파이썬 딕셔너리로 변환하는 코드 (json.load)
 
     # 3. 도서 가격 리스트 생성
     # 'item' 리스트의 각 항목을 순회하며 도서 가격을 추출하여 리스트에 추가합니다.
     book_prices = []  # 도서 가격을 저장할 빈 리스트
     for item in data['item']:  # 'item' 리스트의 각 항목을 순회
-        pass  # 'priceSales' 값을 리스트에 추가하는 코드 (book_prices.append)
+        book_prices.append(item['priceSales'])  # 'priceSales' 값을 리스트에 추가하는 코드 (book_prices.append)
 
     # 4. 평균 가격 계산
     # 도서 가격 리스트의 평균을 계산합니다.
-    pass  # 평균 가격을 계산하는 코드 (sum(book_prices) / len(book_prices))
+    average_price = sum(book_prices) / len(book_prices)  # 평균 가격을 계산하는 코드 (sum(book_prices) / len(book_prices))
 
     # 5. 결과 출력
     # 계산된 평균 가격을 출력합니다.
@@ -29,4 +30,5 @@ if file_path.exists():  # 파일이 존재할 경우
 else:
     # 6. 파일이 없을 경우 처리
     # 파일이 존재하지 않으면 오류 메시지를 출력합니다.
-    pass  # 파일이 존재하지 않을 때의 처리 코드 (print(f"파일이 존재하지 않습니다: {file_path}"))
+    print(f"파일이 존재하지 않습니다: {file_path}")  # 파일이 존재하지 않을 때의 처리 코드 (print(f"파일이 존재하지 않습니다: {file_path}"))
+
