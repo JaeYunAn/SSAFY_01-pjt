@@ -11,7 +11,7 @@ if file_path.exists():  # 파일 존재 여부 확인
     # 파일 열기
     with file_path.open('r', encoding='utf-8') as file:
         data = json.load(file)  # TODO
-        print(type(data))   # JSON 파일을 파이썬 딕셔너리로 변환하는 코드 (json.load)
+           # JSON 파일을 파이썬 딕셔너리로 변환하는 코드 (json.load)
 
     # 3. 책 제목 리스트 생성
     # 'item' 항목을 순회하며 각 도서의 'title' 값을 리스트에 추가합니다.

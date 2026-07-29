@@ -11,8 +11,7 @@ if file_path.exists():  # 파일이 존재할 경우
     # 파일 열기
     with file_path.open('r', encoding='utf-8') as file:
         data = json.load(file)  # TODO
-        print(type(data))   # JSON 파일을 파이썬 딕셔너리로 변환하는 코드 (json.load)
-
+       
     # 3. 고객 리뷰 순위 리스트 생성
     # 'item' 리스트의 각 항목을 순회하며 'customerReviewRank' 값을 추출하여 리스트에 추가합니다.
     customer_review_ranks = []  # 고객 리뷰 순위를 저장할 빈 리스트
